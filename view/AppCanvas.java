@@ -10,7 +10,7 @@ import java.awt.geom.Rectangle2D;
 
 import javax.swing.JPanel;
 
-
+import controller.App;
 import model.Food;
 import model.Snake;
 import model.SnakeNode;

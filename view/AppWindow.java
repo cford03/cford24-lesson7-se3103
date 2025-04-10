@@ -1,11 +1,14 @@
 package view;
 
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import controller.ButtonPressListener;
 
 public class AppWindow extends JFrame{
     
@@ -39,6 +42,12 @@ public class AppWindow extends JFrame{
         startPauseButton.addActionListener(ButtonPressListener);
         resartButton.addActionListener(ButtonPressListener);
         exitButton.addActionListener(ButtonPressListener);
+
+
         
+    }
+
+    public AppCanvas getCanvas() {
+        return canvas;
     }
 }
