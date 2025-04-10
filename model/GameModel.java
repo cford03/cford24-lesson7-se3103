@@ -31,7 +31,7 @@ public class GameModel {
         int x, y;
         do {
             x = random.nextInt(AppCanvas.WIDTH / AppWindow.GRID_SIZE) * AppWindow.GRID_SIZE;
-            y = random.nextInt(AppCanvas.WIDTH / AppWindow.GRID_SIZE) * AppWindow.GRID_SIZE;
+            y = random.nextInt(AppCanvas.HEIGHT / AppWindow.GRID_SIZE) * AppWindow.GRID_SIZE;
         } while (isInsideSnake(x, y));
         return new Food(x, y);
     }

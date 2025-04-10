@@ -34,5 +34,11 @@ public class AppWindow extends JFrame{
         southPanel.add(resartButton);
         southPanel.add(exitButton);
         cp.add(BorderLayout.SOUTH, southPanel);
+
+        ButtonPressListener ButtonPressListener = new ButtonPressListener();
+        startPauseButton.addActionListener(ButtonPressListener);
+        resartButton.addActionListener(ButtonPressListener);
+        exitButton.addActionListener(ButtonPressListener);
+        
     }
 }
