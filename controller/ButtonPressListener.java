@@ -15,11 +15,14 @@ public class ButtonPressListener implements ActionListener {
         switch (action){
             case AppWindow.START_ACTION:
                 App.model.messages = null;
-                button.setText(AppWindow.PAUSE_ACTION);
+                
+                App.win.goNextState();
+                App.timer.start();
                 break;
             case AppWindow.PAUSE_ACTION:
-                button.setText(AppWindow.START_ACTION);
+                App.win.goNextState();
                 App.model.messages = "Paused - Press <Resume>";
+                App.timer.stop();
                 App.win.getCanvas().repaint();
             case AppWindow.RESART_ACTION:
                 break;
