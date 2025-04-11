@@ -24,6 +24,7 @@ public class ButtonPressListener implements ActionListener {
                 App.model.messages = "Paused - Press <Resume>";
                 App.timer.stop();
                 App.win.getCanvas().repaint();
+                break;
             case AppWindow.RESART_ACTION:
                 App.model.init();
                 App.win.goNextState();

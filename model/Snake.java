@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import model.observerPattern.SnakeEvent;
 import model.observerPattern.SnakeObserver;
 import model.observerPattern.Subject;
+import view.AppCanvas;
 import view.AppWindow;
 
 public class Snake implements Subject{
@@ -55,6 +56,13 @@ public class Snake implements Subject{
             case DOWN:
                 head.y += AppWindow.GRID_SIZE;
                 break;
+        }
+    }
+
+    public void falling(){
+        if(nodes.get(0).y >= AppCanvas.HEIGHT - AppWindow.GRID_SIZE) return;
+        for(int i =0; i < nodes.size(); i++){
+            nodes.get(i).y +=5;
         }
     }
 
