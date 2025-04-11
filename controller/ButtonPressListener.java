@@ -25,6 +25,10 @@ public class ButtonPressListener implements ActionListener {
                 App.timer.stop();
                 App.win.getCanvas().repaint();
             case AppWindow.RESART_ACTION:
+                App.model.init();
+                App.win.goNextState();
+                App.timer.stop();
+                App.win.getCanvas().repaint();
                 break;
             case AppWindow.EXIT_ACTION:
                 System.exit(0);

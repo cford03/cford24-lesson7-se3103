@@ -21,6 +21,10 @@ public class App {
         win.setLocation(300, 200);
         win.pack();
         win.setVisible(true);
+
+        SnakeEventListener listener = new SnakeEventListener();
+        App.model.snake.addObserver(listener);
+        
         timer = new Timer(DELAY,new TimerListener());
     }
 }

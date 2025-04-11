@@ -2,6 +2,7 @@ package model;
 
 import java.util.Random;
 
+import controller.App;
 import view.AppCanvas;
 import view.AppWindow;
 
@@ -41,6 +42,28 @@ public class GameModel {
             if (node.x == x && node.y == y)
                 return true;
 
+        }
+        return false;
+    }
+
+    public boolean snakeGotFood(){
+        var food = App.model.food;
+        var head = App.model.snake.nodes.get(0);
+        return food.x == head.x && food.y == head.y;
+    }
+
+    public boolean snakeLeftScene(){
+        var head = App.model.snake.nodes.get(0);
+        return head.x <= 0 || head.x >= AppCanvas.WIDTH
+            || head.y <= 0 || head.y >= AppCanvas.HEIGHT;
+    }
+
+    public boolean snakeHitsItsBody(){
+        var nodes = App.model.snake.nodes;
+        var head = nodes.get(0);
+        for( int i = 1; i < nodes.size(); i++){
+            var n = nodes.get(i);
+            if(head.x == n.x && head.y == n.y) return true;
         }
         return false;
     }

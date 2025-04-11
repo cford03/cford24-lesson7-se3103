@@ -13,7 +13,10 @@ public class GameStatePlaying implements GameState{
 
     @Override
     public void goNext(AppWindow context) {
-        context.setGameState(new GameStatePaused());
+        if(App.model.snakeHitsItsBody()|| App.model.snakeLeftScene())
+            context.setGameState(new GameStateOver());
+        else
+            context.setGameState(new GameStatePaused());
     }
 
     @Override
